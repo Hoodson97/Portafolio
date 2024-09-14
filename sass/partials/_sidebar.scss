@@ -1,0 +1,97 @@
+.sidebar {
+    width: 20%;
+    min-width: 250px;
+    max-width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $primercolors;
+    color: $fontleftcolor;
+    position: fixed;
+    top: 0;
+    left: -70%;
+    transition: left 0.8s ease; 
+    z-index: 1;
+    
+    &.active {
+        left: 0;
+    }
+
+    .sidebar-header {
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        padding: 10px 20px;
+
+        .profile-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid $titleleftcontent;
+        }
+    }
+
+    .sidebar-section {
+        margin: 15%;
+
+        .section-title {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: $titleleftcontent;
+        }
+        .ri-contacts-fill {
+            margin: 8px;
+        }
+        .ri-link {
+            margin: 8px;
+        }
+        .contact-info,
+        .social-links {
+            font-size: 16px;
+            list-style: none;
+        }
+        a {
+            color: $fontleftcolor;
+            text-decoration: none;
+        }
+    }
+
+    .sidebar-footer {
+        margin: 15%;
+
+        a {
+            color: $fontleftcolor;
+            text-decoration: none;
+        }
+    }
+}
+/*para exponer moviles*/
+@media (max-width: 401px) {
+    .sidebar {
+        min-width: unset;
+        max-width: unset;
+        left: -100%; 
+    }
+
+    .sidebar.active {
+        left: 0; 
+    }
+
+    .sidebar-section {
+        margin: 10%; 
+        
+        .section-title {
+            font-size: 18px; 
+        }
+
+        .contact-info,
+        .social-links {
+            font-size: 14px; 
+        }
+    }
+
+    .sidebar-footer {
+        margin: 10%; 
+    }
+}
